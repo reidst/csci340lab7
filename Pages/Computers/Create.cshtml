@@ -1,0 +1,64 @@
+@page
+@model csci340lab7.Pages_Computers.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Computer</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Computer.Name" class="control-label"></label>
+                <input asp-for="Computer.Name" class="form-control" />
+                <span asp-validation-for="Computer.Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Computer.Manufacturer" class="control-label"></label>
+                <input asp-for="Computer.Manufacturer" class="form-control" />
+                <span asp-validation-for="Computer.Manufacturer" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Computer.ReleaseDate" class="control-label"></label>
+                <input asp-for="Computer.ReleaseDate" class="form-control" />
+                <span asp-validation-for="Computer.ReleaseDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Computer.InitialPrice" class="control-label"></label>
+                <input asp-for="Computer.InitialPrice" class="form-control" />
+                <span asp-validation-for="Computer.InitialPrice" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Computer.OperatingSystem" class="control-label"></label>
+                <input asp-for="Computer.OperatingSystem" class="form-control" />
+                <span asp-validation-for="Computer.OperatingSystem" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Computer.ProcessorSpeed" class="control-label"></label>
+                <input asp-for="Computer.ProcessorSpeed" class="form-control" />
+                <span asp-validation-for="Computer.ProcessorSpeed" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Computer.MemorySize" class="control-label"></label>
+                <input asp-for="Computer.MemorySize" class="form-control" />
+                <span asp-validation-for="Computer.MemorySize" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
