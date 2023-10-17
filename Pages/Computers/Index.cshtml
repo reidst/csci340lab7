@@ -1,4 +1,4 @@
-@page
+@page "{searchString?}"
 @model csci340lab7.Pages_Computers.IndexModel
 
 @{
@@ -10,6 +10,17 @@
 <p>
     <a asp-page="Create">Create New</a>
 </p>
+
+<form>
+    <p>
+        <select asp-for="ComputerManufacturer" asp-items="Model.Manufacturers">
+            <option value="">All</option>
+        </select>
+        Operating System: <input type="text" asp-for="SearchString" />
+        <input type="submit" value="Filter" />
+    </p>
+</form>
+
 <table class="table">
     <thead>
         <tr>

@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using csci340lab7.Data;
 using csci340lab7.Models;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace csci340lab7.Pages_Computers
 {
@@ -21,12 +22,39 @@ namespace csci340lab7.Pages_Computers
 
         public IList<Computer> Computer { get;set; } = default!;
 
+        [BindProperty(SupportsGet = true)]
+        public string? SearchString { get; set; }
+
+        public SelectList? Manufacturers { get; set; }
+
+        [BindProperty(SupportsGet = true)]
+        public string? ComputerManufacturer { get; set; }
+
         public async Task OnGetAsync()
         {
-            if (_context.Computer != null)
+            // Use LINQ to get list of manufacturers.
+            IQueryable<string> manufacturerQuery = from c in _context.Computer
+                                                     orderby c.Manufacturer
+                                                     select c.Manufacturer;
+            
+            var computers = from c in _context.Computer
+                        select c;
+
+            if (!string.IsNullOrEmpty(SearchString))
             {
-                Computer = await _context.Computer.ToListAsync();
+                computers = computers.Where(
+                    s => s.OperatingSystem.Contains(SearchString));
             }
+
+            if (!string.IsNullOrEmpty(ComputerManufacturer))
+            {
+                computers = computers.Where(
+                    x => x.Manufacturer == ComputerManufacturer);
+            }
+
+            Manufacturers = new SelectList(
+                await manufacturerQuery.Distinct().ToListAsync());
+            Computer = await computers.ToListAsync();
         }
     }
 }
