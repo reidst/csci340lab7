@@ -20,5 +20,5 @@ public class Computer
     [Display(Name = "Processor Speed (MHz)")]
     public decimal ProcessorSpeed { get; set; }
     [Display(Name = "Memory Size (KB)")]
-    public decimal MemorySize { get; set; }
+    public int MemorySize { get; set; }
 }

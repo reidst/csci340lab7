@@ -30,7 +30,7 @@ public static class SeedData
                 InitialPrice = 6270.00M,
                 OperatingSystem = "Integer BASIC / Apple DOS",
                 ProcessorSpeed = 1.023M,
-                MemorySize = 64M
+                MemorySize = 64
             },
 
             new Computer
@@ -41,7 +41,7 @@ public static class SeedData
                 InitialPrice = 1800.00M,
                 OperatingSystem = "Commodore KERNAL / BASIC 2.0",
                 ProcessorSpeed = 1.023M,
-                MemorySize = 64M
+                MemorySize = 64
             },
 
             new Computer
@@ -52,7 +52,7 @@ public static class SeedData
                 InitialPrice = 2900.00M,
                 OperatingSystem = "TRSDOS / LDOS / NewDos/80 / Level I BASIC",
                 ProcessorSpeed = 1.774M,
-                MemorySize = 48M
+                MemorySize = 48
             },
 
             new Computer
@@ -63,7 +63,7 @@ public static class SeedData
                 InitialPrice = 1269.00M,
                 OperatingSystem = "Acorn MOS",
                 ProcessorSpeed = 2M,
-                MemorySize = 32M
+                MemorySize = 32
             },
 
             new Computer
@@ -74,7 +74,7 @@ public static class SeedData
                 InitialPrice = 870.00M,
                 OperatingSystem = "Sinclair BASIC",
                 ProcessorSpeed = 3.5M,
-                MemorySize = 48M
+                MemorySize = 48
             }
         );
         context.SaveChanges();
