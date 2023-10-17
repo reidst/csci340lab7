@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using csci340lab7.Data;
 
@@ -10,9 +11,11 @@ using csci340lab7.Data;
 namespace csci340lab7.Migrations
 {
     [DbContext(typeof(RazorPagesComputerContext))]
-    partial class RazorPagesComputerContextModelSnapshot : ModelSnapshot
+    [Migration("20231017022642_New_DataAnnotations")]
+    partial class New_DataAnnotations
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "7.0.12");
